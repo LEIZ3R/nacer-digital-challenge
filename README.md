@@ -1,5 +1,7 @@
 # Nacer Digital — Full Stack Challenge
 
+![Demo](./docs/demo.gif)
+
 Repositorio del reto técnico para Nacer Digital. Monorepo con dos paquetes independientes:
 
 - **[`backend/`](./backend)** — NestJS API que consulta GitHub y expone `GET /user/:username`.
