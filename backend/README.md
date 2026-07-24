@@ -13,15 +13,15 @@ NestJS 10 API que consulta GitHub y expone el perfil de un usuario. Pensado como
 ## Requisitos
 
 - Node 20+ (desarrollado y probado con Node 24)
-- npm 10+
+- pnpm 9+ (desarrollado y probado con pnpm 11)
 
 ## Setup
 
 ```bash
 cd backend
 cp .env.example .env       # editar si tenés GITHUB_TOKEN
-npm install
-npm run start:dev          # http://localhost:3001
+pnpm install
+pnpm run start:dev         # http://localhost:3001
 ```
 
 ## Variables de entorno
@@ -86,13 +86,13 @@ Códigos de error:
 ## Scripts
 
 ```bash
-npm run start:dev     # dev con watch
-npm run build         # compila a dist/
-npm run start:prod    # corre dist/main
-npm test              # tests unitarios
-npm run test:e2e      # tests e2e con supertest + nock
-npm run lint          # eslint --fix
-npm run format        # prettier --write
+pnpm run start:dev     # dev con watch
+pnpm run build         # compila a dist/
+pnpm run start:prod    # corre dist/main
+pnpm test              # tests unitarios
+pnpm run test:e2e      # tests e2e con supertest + nock
+pnpm run lint          # eslint --fix
+pnpm run format        # prettier --write
 ```
 
 ## Estructura

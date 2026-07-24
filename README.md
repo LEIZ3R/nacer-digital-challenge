@@ -33,8 +33,8 @@ Vas a necesitar **dos terminales**, una por paquete.
 ```bash
 cd backend
 cp .env.example .env       # editar con tu GITHUB_TOKEN opcional
-npm install
-npm run start:dev          # http://localhost:3001
+pnpm install
+pnpm run start:dev         # http://localhost:3001
 ```
 
 Endpoint disponible: `GET http://localhost:3001/user/:username`
@@ -44,23 +44,23 @@ Endpoint disponible: `GET http://localhost:3001/user/:username`
 ```bash
 cd frontend
 cp .env.example .env.local  # editar con la URL del backend
-npm install
-npm run dev                # http://localhost:3000
+pnpm install
+pnpm run dev                # http://localhost:3000
 ```
 
 ## Despliegue
 
-- **Backend:** Render conecta al repo, build `npm run build`, start `npm run start:prod`. Env vars en el dashboard.
+- **Backend:** Render conecta al repo, build `pnpm run build`, start `pnpm run start:prod`. Env vars en el dashboard.
 - **Frontend:** Vercel conecta al repo, root dir `frontend/`. Env var `NEXT_PUBLIC_API_URL` apuntando al backend.
 
 ## Tests
 
 ```bash
 # Backend
-cd backend && npm test
+cd backend && pnpm test
 
 # Frontend
-cd frontend && npm test
+cd frontend && pnpm test
 ```
 
 ## Licencia

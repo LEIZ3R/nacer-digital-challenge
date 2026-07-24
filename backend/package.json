@@ -4,6 +4,11 @@
   "description": "NestJS API that queries GitHub and exposes GET /user/:username",
   "private": true,
   "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@11.17.0",
   "scripts": {
     "build": "nest build",
     "start": "nest start",
