@@ -14,7 +14,10 @@ export class UserNotFoundError extends Error {
 // cada request traiga datos frescos (un perfil cambia seguido: followers,
 // bio, etc.). Si en el futuro queremos un TTL, acá es donde se cambia.
 export async function fetchUser(username: string): Promise<User> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+  // Normalizamos para tolerar trailing slash en la env var: si alguien
+  // setea NEXT_PUBLIC_API_URL=https://api.com/ no queremos terminar
+  // pegando a https://api.com//user/foo con doble slash.
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "");
   if (!baseUrl) {
     throw new Error("NEXT_PUBLIC_API_URL is not defined");
   }
