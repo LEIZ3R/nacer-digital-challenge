@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { fetchUser, UserNotFoundError } from "@/lib/api";
+import { Layout } from "@/components/Layout";
 import { UserCard } from "@/components/UserCard";
 import { UserStats } from "@/components/UserStats";
 import { UserMeta } from "@/components/UserMeta";
@@ -45,8 +46,8 @@ export default async function UserPage({
   }
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <div className="grid gap-6 md:grid-cols-3">
+    <Layout>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         <div className="md:col-span-1">
           <UserCard user={user} />
         </div>
@@ -55,6 +56,6 @@ export default async function UserPage({
           <UserMeta user={user} />
         </div>
       </div>
-    </main>
+    </Layout>
   );
 }

@@ -45,7 +45,7 @@ export function SearchForm({ defaultValue = "" }: Props) {
       onSubmit={onSubmit}
       role="search"
       aria-label="Buscar usuario de GitHub"
-      className="mx-auto flex w-full max-w-md flex-col gap-2"
+      className="flex w-full max-w-md flex-col gap-2"
     >
       <div className="flex gap-2">
         <input
@@ -61,12 +61,12 @@ export function SearchForm({ defaultValue = "" }: Props) {
           placeholder="octocat"
           aria-label="Username de GitHub"
           aria-invalid={Boolean(error)}
-          className="flex-1 rounded-full border border-slate-300 bg-white px-4 py-2 text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/10"
+          className="flex-1 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-slate-900 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/10"
         />
         <button
           type="submit"
           disabled={isPending}
-          className="rounded-full bg-slate-900 px-5 py-2 text-sm font-medium text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-2xl bg-slate-900 px-5 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isPending ? "Buscando…" : "Buscar"}
         </button>

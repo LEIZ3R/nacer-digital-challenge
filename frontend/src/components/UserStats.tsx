@@ -1,11 +1,13 @@
 import { formatNumber } from "@/lib/format";
 import type { User } from "@/types/user";
 
-// Grid de 3 stats: repos públicos, seguidores, siguiendo.
-// Números formateados con Intl.NumberFormat (miles con coma en en-US).
+// Tres stat cards individuales en grid: repos públicos, seguidores,
+// siguiendo. Números formateados con Intl.NumberFormat (miles con coma
+// en en-US). Las labels se ven en mayúsculas vía CSS (uppercase +
+// tracking-wider), por eso el source queda en minúsculas.
 export function UserStats({ user }: { user: User }) {
   const items: { label: string; value: number }[] = [
-    { label: "Repos públicos", value: user.publicRepos },
+    { label: "Repos púb.", value: user.publicRepos },
     { label: "Seguidores", value: user.followers },
     { label: "Siguiendo", value: user.following },
   ];
@@ -13,17 +15,17 @@ export function UserStats({ user }: { user: User }) {
   return (
     <section
       aria-label="Estadísticas del usuario"
-      className="grid grid-cols-3 gap-3"
+      className="grid grid-cols-1 gap-4 sm:grid-cols-3"
     >
       {items.map((item) => (
         <div
           key={item.label}
-          className="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm"
+          className="rounded-2xl border border-slate-200/60 bg-white p-6 text-center shadow-sm"
         >
-          <p className="text-2xl font-semibold tabular-nums text-slate-900">
+          <p className="text-2xl font-bold tabular-nums text-slate-900 md:text-3xl">
             {formatNumber(item.value)}
           </p>
-          <p className="mt-1 text-[10px] font-medium uppercase tracking-wider text-slate-500 sm:text-xs">
+          <p className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">
             {item.label}
           </p>
         </div>
